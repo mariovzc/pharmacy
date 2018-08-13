@@ -32,13 +32,13 @@ RSpec.describe User, type: :model do
   describe 'uniqueness' do
     subject { 
       User.new(
-        first_name: "Jon",
-        last_name: "Doe", 
-        document: "123456", 
-        role_id: 1, 
-        email: "a@a.com"
+        first_name: 'Jon',
+        last_name: 'Doe',
+        document: '123456',
+        role_id: 1,
+        email: 'a@a.com'
       )
-     }
+    }
     it { should validate_uniqueness_of(:email) }
     it { should validate_uniqueness_of(:document).case_insensitive }
   end

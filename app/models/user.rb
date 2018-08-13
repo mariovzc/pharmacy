@@ -20,11 +20,13 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  #associations
+  # associations
   belongs_to :role
 
-  #validations
-  validates :email, uniqueness: true, presence: true, email_format: { message: 'Formato Invalido' }
+  # validations
+  validates :email, uniqueness: true
+  validates :email, presence: true
+  validates :email,  email_format: { message: 'Formato Invalido' }
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :role_id, presence: true
@@ -32,5 +34,4 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true, on: :create
-
 end
