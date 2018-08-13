@@ -1934,7 +1934,7 @@ Style/StructInheritance:
 Style/SymbolArray:
   Description: 'Use %i or %I for arrays of symbols.'
   StyleGuide: '#percent-i'
-  Enabled: true
+  Enabled: false
 
 Style/SymbolLiteral:
   Description: 'Use plain symbols instead of string symbols when possible.'
