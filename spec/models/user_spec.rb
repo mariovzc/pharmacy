@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -13,7 +15,6 @@
 #  status           :boolean          default(TRUE)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#
 
 require 'rails_helper'
 
@@ -30,7 +31,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'uniqueness' do
-    subject { 
+    subject do 
       User.new(
         first_name: 'Jon',
         last_name: 'Doe',
@@ -38,7 +39,7 @@ RSpec.describe User, type: :model do
         role_id: 1,
         email: 'a@a.com'
       )
-    }
+    end
     it { should validate_uniqueness_of(:email) }
     it { should validate_uniqueness_of(:document).case_insensitive }
   end

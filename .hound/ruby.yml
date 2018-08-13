@@ -1440,7 +1440,7 @@ Style/Dir:
   Description: >-
                  Use the `__dir__` method to retrieve the canonicalized
                  absolute path to the current file.
-  Enabled: true
+  Enabled: false
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'

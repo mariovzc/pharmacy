@@ -5,8 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-p "Seed Init"
+p 'Seed Init'
 
-Role.first_or_create([{name: "Admin"},{name: "Managger"}, {name: "seller"}])
+Role.first_or_create(
+  [
+    {
+      name: 'Admin'
+    },
+    {
+      name: 'Managger'
+    },
+    {
+      name: 'seller'
+    }
+  ]
+)
 
-p "Seed Finished"
+p 'Seed Finished'
