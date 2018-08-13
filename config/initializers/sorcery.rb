@@ -248,12 +248,14 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.custom_encryption_provider =
 
-    # encryption algorithm name. See 'encryption_algorithm=' for available options.
+    # encryption algorithm name.
+    # See 'encryption_algorithm=' for available options.
     # Default: `:bcrypt`
     #
     # user.encryption_algorithm =
 
-    # make this configuration inheritable for subclasses. Useful for ActiveRecord's STI.
+    # make this configuration inheritable for subclasses.
+    # Useful for ActiveRecord's STI.
     # Default: `false`
     #
     # user.subclasses_inherit_config =
@@ -264,8 +266,10 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.remember_me_for =
 
-    # when true sorcery will persist a single remember me token for all
-    # logins/logouts (supporting remembering on multiple browsers simultaneously).
+    # when true sorcery will persist a single remember me token
+    # for all
+    # logins/logouts
+    # (supporting remembering on multiple browsers simultaneously).
     # Default: false
     #
     # user.remember_me_token_persist_globally =
@@ -286,7 +290,8 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.activation_token_expires_at_attribute_name =
 
-    # how many seconds before the activation code expires. nil for never expires.
+    # how many seconds before the activation code expires.
+    # nil for never expires.
     # Default: `nil`
     #
     # user.activation_token_expiration_period =
@@ -305,7 +310,8 @@ Rails.application.config.sorcery.configure do |config|
 
     # method to send email related
     # options: `:deliver_later`, `:deliver_now`, `:deliver`
-    # Default: :deliver (Rails version < 4.2) or :deliver_now (Rails version 4.2+)
+    # Default: :deliver (Rails version < 4.2)
+    # or :deliver_now (Rails version 4.2+)
     #
     # user.email_delivery_method =
 
@@ -319,7 +325,8 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.activation_success_email_method_name =
 
-    # do you want to prevent or allow users that did not activate by email to login?
+    # do you want to prevent or allow users that did 
+    # not activate by email to login?
     # Default: `true`
     #
     # user.prevent_non_active_users_to_login =
