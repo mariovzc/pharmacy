@@ -26,7 +26,7 @@ class User < ApplicationRecord
   # validations
   validates :email, uniqueness: true
   validates :email, presence: true
-  validates :email,  email_format: { message: 'Formato Invalido' }
+  validates :email, email_format: { message: 'Formato Invalido' }
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :role_id, presence: true

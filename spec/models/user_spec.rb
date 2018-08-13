@@ -31,7 +31,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'uniqueness' do
-    subject do 
+    subject do
       User.new(
         first_name: 'Jon',
         last_name: 'Doe',
