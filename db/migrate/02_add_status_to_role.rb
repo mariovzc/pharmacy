@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# CREATE USER MODEL
+# ADD STATUS TO ROLES
 
 class AddStatusToRole < ActiveRecord::Migration[5.2]
   def change

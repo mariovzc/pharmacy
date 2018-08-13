@@ -362,12 +362,12 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.reset_password_expiration_period =
 
-    # hammering protection, how long in seconds to wait before 
+    # hammering protection, how long in seconds to wait before
     # allowing another email to be sent.
     # Default: `5 * 60`
     #
     # user.reset_password_time_between_emails =
-    
+
     # access counter to a reset password page attribute name
     # Default: `:access_count_to_reset_password_page`
     #
@@ -423,7 +423,7 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.failed_logins_count_attribute_name =
 
-    # This field indicates whether user is banned 
+    # This field indicates whether user is banned
     # and when it will be active again.
     # Default: `:lock_expires_at`
     #
