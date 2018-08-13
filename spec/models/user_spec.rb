@@ -19,7 +19,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   
-  describe "Validations" do
+  describe 'Validations' do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:first_name) }
     it { should validate_presence_of(:last_name) }
@@ -29,14 +29,21 @@ RSpec.describe User, type: :model do
     it { should validate_confirmation_of(:password).on(:create) }
   end
 
-  describe "uniqueness" do
-    subject { User.new(first_name: "Jon",last_name: "Doe", document: "123456", role_id: 1, email: "a@a.com",) }
+  describe 'uniqueness' do
+    subject { 
+      User.new(
+        first_name: "Jon",
+        last_name: "Doe", 
+        document: "123456", 
+        role_id: 1, 
+        email: "a@a.com"
+      )
+     }
     it { should validate_uniqueness_of(:email) }
     it { should validate_uniqueness_of(:document).case_insensitive }
   end
 
-  describe "Associations" do
+  describe 'Associations' do
     it { should belong_to(:role) }
   end
-
 end

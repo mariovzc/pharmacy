@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: roles
@@ -8,11 +10,10 @@
 #  updated_at :datetime         not null
 #  status     :boolean          default(TRUE)
 #
-
 class Role < ApplicationRecord
-  #associations
+  # associations
   has_many :users
 
-  #validations
+  # validations
   validates :name, presence: true
 end
