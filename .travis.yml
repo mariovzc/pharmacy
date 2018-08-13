@@ -1,15 +1,24 @@
 language: ruby
-sudo: false
-cache: bundler
-script: "bundle exec rake"
-install: "bundle install --jobs=3 --retry=3"
-
-env:
-  - DATABASE_ADAPTER=sqlite3
-
 rvm:
-  - 2.4.0
+  - 2.4.1
+addons:
+  chrome: stable
+  apt:
+    sources:
+      - sourceline: "ppa:mc3man/trusty-media"
+      - sourceline: "ppa:ubuntuhandbook1/apps"
+
+before_install:
+  - "rm ${BUNDLE_GEMFILE}.lock"
+  - "travis_retry gem update --system"
+  - "travis_retry gem install bundler -v 1.15.4"
+
+before_script:
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed
+  - bundle exec rake db:migrate RAILS_ENV=test --trace
+  - bundle exec rake db:seed RAILS_ENV=test --trace
 
 script:
-  - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
