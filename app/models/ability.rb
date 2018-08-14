@@ -6,8 +6,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     user ||= User.new
+
     case user.role.name
     when 'Admin'
       can :manage, :all
