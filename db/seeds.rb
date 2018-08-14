@@ -15,7 +15,7 @@ Role.first_or_create(
       name: 'Admin'
     },
     {
-      name: 'Managger'
+      name: 'Manager'
     },
     {
       name: 'Seller'
