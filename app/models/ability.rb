@@ -12,7 +12,7 @@ class Ability
     when 'Admin'
       can :manage, :all
     when 'Manager'
-      can :manage, :all
+      can :crud, Seller
     when 'Seller'
       can :manage, :all
     end
