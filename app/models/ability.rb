@@ -11,7 +11,7 @@ class Ability
     case user.role.name
     when 'Admin'
       can :manage, :all
-    when 'Managger'
+    when 'Manager'
       can :manage, :all
     when 'Seller'
       can :manage, :all
