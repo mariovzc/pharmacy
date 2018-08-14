@@ -8,7 +8,7 @@ class Ability
   def initialize(user)
 
     user ||= User.new
-    case user.role
+    case user.role.name
     when 'Admin'
       can :manage, :all
     when 'Managger'
