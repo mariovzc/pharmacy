@@ -1,5 +1,5 @@
 class SellersController < ApplicationController
-  before_action :set_seller, only [:show, :edit, :update, :deactivate]
+  before_action :set_seller, only: [:show, :edit, :update, :deactivate]
 
   def index
   end
