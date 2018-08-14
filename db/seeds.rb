@@ -16,7 +16,7 @@ Role.first_or_create(
       name: 'Managger'
     },
     {
-      name: 'seller'
+      name: 'Seller'
     }
   ]
 )
