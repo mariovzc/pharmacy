@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p 'Seed Init'
 
+p 'Roles seed'
+
 Role.first_or_create(
   [
     {
@@ -20,5 +22,19 @@ Role.first_or_create(
     }
   ]
 )
+
+p 'End  Roles seed'
+
+p 'Create super admin'
+User.first_or_create({
+  email: "admin@sysadmin.com",
+  password: "admin123456",
+  password_confirmation: 'admin123456',
+  first_name: 'Admin',
+  last_name: 'Super',
+  document: '12345678',
+  role_id: 1
+})
+p 'End create super admin'
 
 p 'Seed Finished'
