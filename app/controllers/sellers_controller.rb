@@ -1,24 +1,21 @@
+# frozen_string_literal: true
+
 class SellersController < ApplicationController
   before_action :set_seller, only: [:show, :edit, :update, :deactivate]
 
-  def index
-  end
+  def index; end
 
   def new
     @seller = Seller.new
   end
 
-  def create
-  end
+  def create; end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
-  def deactivate
-  end
+  def deactivate; end
 
   private
 
