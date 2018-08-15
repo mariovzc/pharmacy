@@ -4,12 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def root_path
-    case current_user.role.name
-    when 'Admin'
-      '/admin'
-    when 'Manager'
-    when 'Seller'
-    end
+    "/#{current_user.role.name.downcase}"
   end
 
   def not_authenticated
