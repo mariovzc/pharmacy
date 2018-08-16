@@ -1,17 +1,58 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
+  before_action :set_product, except: [:create, :index]
+
   def index; end
 
-  def create; end
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      render json: @product.products_list, status: 201
+    else
+      render json: @product.errors, status: 422
+    end
+  end
 
-  def destroy; end
+  def show; end
 
-  def update; end
+  def update
+    if @product.update(product_params)
+      render json: @product.products_list, status: 200
+    else
+      render json: @product.errors, status: 422
+    end
 
-  def add_stock; end
+  end
 
-  def remove_stock; end
+  def add_stock
+    @product.addStock
+    render json: @product.products_list, status: 200
+  end
 
-  def deactivate; end
+  def remove_stock
+    @product.remveStock
+    render json: @product.products_list, status: 200
+  end
+
+  def deactivate
+    @product.deactivate!
+  end
+
+  private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def product_params
+    params.require(:product).permit(
+      :name,
+      :code,
+      :stock,
+      :purchase_price,
+      :selling_price,
+      :expiration_date
+    )
+  end
 end

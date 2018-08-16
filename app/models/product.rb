@@ -22,4 +22,30 @@ class Product < ApplicationRecord
   validates :expiration_date, presence: true
   validates :purchase_price, presence: true
   validates :purchase_price, numericality: { greater_than_or_equal_to: 1 }
+  validates :stock, numericality: { only_integer: true, greater_than: 0 }
+  #scopes
+  scope :active, -> { where(status: true) }
+
+  # product methods
+
+  def products_list(filters = {})
+    Products.active
+  end
+
+  def addStock
+    update_stock(self.stock.to_i  + 1 )
+  end
+
+  def removeStock
+    update_stock(self.stock.to_i  - 1 )
+  end
+
+  def deactivate!
+    self.update(status: false)
+  end
+
+  private
+  def update_stock(number)
+    self.update(stock: number)
+  end
 end
