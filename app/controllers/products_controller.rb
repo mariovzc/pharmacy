@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:create, :index]
+  before_action :set_product, except: [:index, :create]
 
   def index; end
 
@@ -22,16 +22,15 @@ class ProductsController < ApplicationController
     else
       render json: @product.errors, status: 422
     end
-
   end
 
   def add_stock
-    @product.addStock
+    @product.add_stock
     render json: @product.products_list, status: 200
   end
 
   def remove_stock
-    @product.remveStock
+    @product.remove_stock
     render json: @product.products_list, status: 200
   end
 
