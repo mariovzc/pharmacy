@@ -1432,15 +1432,6 @@ Style/Dir:
                  absolute path to the current file.
   Enabled: false
 
-Style/Documentation:
-  Description: 'Document classes and non-namespace modules.'
-  Enabled: true
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
-
 Style/DoubleNegation:
   Description: 'Checks for uses of double negation (!!).'
   StyleGuide: '#no-bang-bang'
