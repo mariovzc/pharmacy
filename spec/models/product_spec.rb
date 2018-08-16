@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: products
@@ -24,8 +26,8 @@ RSpec.describe Product, type: :model do
       should validate_numericality_of(:purchase_price)
     end
     it do
-      should validate_numericality_of(:purchase_price).
-        is_greater_than_or_equal_to(1)
+      should validate_numericality_of(:purchase_price)
+        .is_greater_than_or_equal_to(1)
     end
     it { should validate_presence_of(:expiration_date) }
   end

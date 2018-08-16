@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: products
@@ -19,5 +21,5 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :expiration_date, presence: true
   validates :purchase_price, presence: true
-  validates :purchase_price, numericality: {greater_than_or_equal_to: 1}
+  validates :purchase_price, numericality: { greater_than_or_equal_to: 1 }
 end
