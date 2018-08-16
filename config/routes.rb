@@ -12,4 +12,12 @@ Rails.application.routes.draw do
       put :deactivate
     end
   end
+
+  resources :products, except: [:destroy] do
+    member do
+      put :add_stock
+      put :remove_stock
+      put :deactivate
+    end
+  end
 end
