@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -15,6 +14,8 @@
 #  status           :boolean          default(TRUE)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  role_name        :string
+#
 
 require 'rails_helper'
 
