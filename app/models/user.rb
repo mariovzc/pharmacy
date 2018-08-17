@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -38,7 +39,7 @@ class User < ApplicationRecord
   validates :document, uniqueness: true, presence: true
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true, on: :create
-    
+
   private
 
   def set_role
