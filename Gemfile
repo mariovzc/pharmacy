@@ -5,6 +5,7 @@ ruby '2.4.0'
 
 gem 'autoprefixer-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'foundation-rails'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
