@@ -601,16 +601,6 @@ Lint/ParenthesesAsGroupedExpression:
   StyleGuide: '#parens-no-spaces'
   Enabled: true
 
-Lint/PercentStringArray:
-  Description: >-
-                 Checks for unwanted commas and quotes in %w/%W literals.
-  Enabled: true
-
-Lint/PercentSymbolArray:
-  Description: >-
-                 Checks for unwanted commas and colons in %i/%I literals.
-  Enabled: true
-
 Lint/RandOne:
   Description: >-
                  Checks for `rand(1)` calls. Such calls always return `0`
@@ -1442,15 +1432,6 @@ Style/Dir:
                  absolute path to the current file.
   Enabled: false
 
-Style/Documentation:
-  Description: 'Document classes and non-namespace modules.'
-  Enabled: true
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
-
 Style/DoubleNegation:
   Description: 'Checks for uses of double negation (!!).'
   StyleGuide: '#no-bang-bang'
@@ -1532,12 +1513,6 @@ Style/FormatString:
 
 Style/FormatStringToken:
   Description: 'Use a consistent style for format string tokens.'
-  Enabled: true
-
-Style/FrozenStringLiteralComment:
-  Description: >-
-                 Add the frozen_string_literal comment to the top of files
-                 to help transition from Ruby 2.3.0 to Ruby 3.0.
   Enabled: true
 
 Style/GlobalVars:
@@ -1857,7 +1832,7 @@ Style/RedundantReturn:
 Style/RedundantSelf:
   Description: "Don't use self where it's not needed."
   StyleGuide: '#no-self-unless-required'
-  Enabled: true
+  Enabled: false
 
 Style/RegexpLiteral:
   Description: 'Use / or %r around regular expressions.'

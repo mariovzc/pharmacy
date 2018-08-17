@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 6) do
+
+  create_table "products", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "code"
+    t.integer "stock"
+    t.decimal "purchase_price", null: false
+    t.decimal "selling_price"
+    t.date "expiration_date"
+    t.boolean "status", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "created_by_id"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -30,6 +43,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
   end

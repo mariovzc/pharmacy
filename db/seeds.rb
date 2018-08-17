@@ -15,7 +15,7 @@ Role.first_or_create(
       name: 'Admin'
     },
     {
-      name: 'Managger'
+      name: 'Manager'
     },
     {
       name: 'Seller'
@@ -26,7 +26,7 @@ Role.first_or_create(
 p 'End  Roles seed'
 
 p 'Create super admin'
-User.first_or_create({
+User.create({
   email: "admin@sysadmin.com",
   password: "admin123456",
   password_confirmation: 'admin123456',
@@ -35,6 +35,34 @@ User.first_or_create({
   document: '12345678',
   role_id: 1
 })
-p 'End create super admin'
+
+p 'End of create manager'
+
+p 'Create manager'
+
+User.create({
+  email: "manager@manager.com",
+  password: "12345678",
+  password_confirmation: '12345678',
+  first_name: 'Admin',
+  last_name: 'Super',
+  document: '12345610',
+  role_id: 2
+})
+
+p 'End Create seller'
+
+p 'Create seller'
+
+User.create({
+  email: "seller@seller.com",
+  password: "12345678",
+  password_confirmation: '12345678',
+  first_name: 'Admin',
+  last_name: 'Super',
+  document: '12345679',
+  role_id: 3
+})
+p 'End create Seller'
 
 p 'Seed Finished'

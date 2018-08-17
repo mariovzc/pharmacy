@@ -15,13 +15,20 @@
 #  status           :boolean          default(TRUE)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  role_name        :string
 #
 
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  # Callbacks
+  after_initialize :set_role
+
+  self.inheritance_column = :role_name
+
   # associations
   belongs_to :role
+  has_many :products, class_name: 'Product', foreign_key: 'created_by_id'
 
   # validations
   validates :email, uniqueness: true
@@ -31,7 +38,16 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :role_id, presence: true
   validates :document, uniqueness: true, presence: true
-
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true, on: :create
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
+  private
+
+  def set_role
+    self.role ||= Role.find_by_name(self.role_name)
+  end
 end

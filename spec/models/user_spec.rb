@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -15,6 +14,8 @@
 #  status           :boolean          default(TRUE)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  role_name        :string
+#
 
 require 'rails_helper'
 
@@ -46,5 +47,6 @@ RSpec.describe User, type: :model do
 
   describe 'Associations' do
     it { should belong_to(:role) }
+    it { should have_many(:products) }
   end
 end
