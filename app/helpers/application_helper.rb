@@ -8,6 +8,11 @@ module ApplicationHelper
 
   # this convert the money value in money format
   def price_helper(money)
-    number_to_currency(money, unit: 'COP ', separator: ',', delimiter: '.')
+    number_to_currency(
+      money, 
+      unit: 'COP ',
+      separator: ',',
+      delimiter: '.'
+    )
   end
 end
