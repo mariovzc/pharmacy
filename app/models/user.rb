@@ -41,6 +41,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true, on: :create
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   private
 
   def set_role
