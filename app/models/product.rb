@@ -33,8 +33,8 @@ class Product < ApplicationRecord
 
   # product methods
 
-  def products_list
-    Products.active
+  def self.products_list
+    active
   end
 
   def add_stock
