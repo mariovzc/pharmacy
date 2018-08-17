@@ -28,6 +28,7 @@ class User < ApplicationRecord
 
   # associations
   belongs_to :role
+  has_many :products, class_name: 'Product', foreign_key: 'created_by_id'
 
   # validations
   validates :email, uniqueness: true
