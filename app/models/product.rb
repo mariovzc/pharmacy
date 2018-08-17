@@ -14,6 +14,7 @@
 #  status          :boolean          default(TRUE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  created_by_id   :integer
 #
 
 class Product < ApplicationRecord
@@ -27,10 +28,13 @@ class Product < ApplicationRecord
   # scopes
   scope :active, -> { where(status: true) }
 
+  # Asociations
+  belongs_to :created_by, class_name: 'User', foreign_key: 'created_by_id'
+
   # product methods
 
-  def products_list
-    Products.active
+  def self.products_list
+    active
   end
 
   def add_stock

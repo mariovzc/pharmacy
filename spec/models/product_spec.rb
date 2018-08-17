@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: products
@@ -14,6 +13,7 @@
 #  status          :boolean          default(TRUE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  created_by_id   :integer
 #
 
 require 'rails_helper'
@@ -30,5 +30,9 @@ RSpec.describe Product, type: :model do
         .is_greater_than_or_equal_to(1)
     end
     it { should validate_presence_of(:expiration_date) }
+  end
+
+  describe 'Associations' do
+    it { should belong_to(:created_by) }
   end
 end

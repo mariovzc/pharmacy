@@ -3,7 +3,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :create]
 
-  def index; end
+  def index
+    @products = Product.all
+  end
 
   def create
     @product = Product.new(product_params)
