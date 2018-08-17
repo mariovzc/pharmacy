@@ -1,2 +1,28 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Disponibles</th>
+      <th scope="col">Precio de compra</th>
+      <th scope="col">Precio de Venta</th>
+      <th scope="col">Fecha de expiracion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Creado por</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <th scope="row"><%= product.id %></th>
+        <td><%= product.name %></td>
+        <td><%= product.stock %></td>
+        <td> <%= price_helper(product.purchase_price) %></td>
+        <td><%= price_helper(product.selling_price || product.purchase_price) %></td>
+        <td><%= product.expiration_date %></td>
+        <td><%= status_helper(product.status) %></td>
+        <td><%= product.created_by.full_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
