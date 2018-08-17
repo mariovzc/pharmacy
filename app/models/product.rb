@@ -46,6 +46,7 @@ class Product < ApplicationRecord
   end
 
   private
+
   def update_stock(number)
     self.update(stock: number)
   end
